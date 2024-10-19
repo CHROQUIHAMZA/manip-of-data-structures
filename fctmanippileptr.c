@@ -24,7 +24,7 @@ PTpile *creerpile()
 //vider une pile
 PTpile *razepile(PTpile *mapile)
 {
-    //declarer un poiteur que va contenir les cellules à supprimer
+    //declarer un poiteur que va contenir les cellules Ã  supprimer
     PTpile *temp ;
     //boucle pour supprimer les elements de la pile
     while(mapile)
@@ -118,7 +118,7 @@ int taille_pile(PTpile*mapile)
 
 /*-----------------------------------------*/
 
-void afficher_pile(PTpile *mapile)
+PTpile* afficher_pile(PTpile *mapile)
 {
 
     PTpile *aux=NULL ;
@@ -138,6 +138,7 @@ void afficher_pile(PTpile *mapile)
         aux=depiler(aux);
 
     }
+    return (PTpile*)(mapile)
 }
 PTpile*insererbonneplacepile(PTpile*P,int val)
 {
