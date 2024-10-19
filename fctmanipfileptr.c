@@ -17,7 +17,7 @@ PTfile *creerfile()
 
 /*-----------------------------------------*/
 
-//creer une cellule à inseré
+//creer une cellule Ã  inserÃ©
 PTliste *creer_cellule()
 {
     PTliste *NE;//declarer une nouvelle cellule
@@ -38,7 +38,7 @@ PTliste *creer_cellule()
 //vider une file
 int raze_file(PTfile*mafile)
 {
-    PTliste *temp ;//declarer un pointeur qui va stocker l'element à supprimer
+    PTliste *temp ;//declarer un pointeur qui va stocker l'element Ã  supprimer
     if(!mafile) //verifier si la file existe
     {
         printf("ERROR");
@@ -52,7 +52,7 @@ int raze_file(PTfile*mafile)
     }
     while(mafile->debut)//tant que la file n'est pas vide
     {
-       temp=mafile->debut;//le pointeur temp recevoir l'adresse du premier element à supprimer
+       temp=mafile->debut;//le pointeur temp recevoir l'adresse du premier element Ã  supprimer
        mafile->debut=mafile->debut->suivant; //faire avancer le pointeur dans la file
        free(temp);//liberer l'espace memoire pour cet element
     }//fin while
@@ -103,7 +103,7 @@ int enfiler(PTfile *mafile,int donnee)
 //defiler un elemnt
 int defiler(PTfile *mafile)
 {
-    //declarer un pointeur pour stocker la cellule à supprimer
+    //declarer un pointeur pour stocker la cellule Ã  supprimer
     PTliste*temp ;
     //verifier si la file existe
     if(!mafile)
@@ -126,7 +126,7 @@ int defiler(PTfile *mafile)
     {
     //affecter la tete de la file au pointeur temp
     temp=mafile->debut;
-    //faire avancé le pointeur dans la file
+    //faire avancÃ© le pointeur dans la file
     mafile->debut=mafile->debut->suivant ;
     //librer l'espace memoire pour cette veriale
     free(temp);
@@ -137,7 +137,7 @@ int defiler(PTfile *mafile)
 /*-----------------------------------------*/
 
 //afficher une liste
-void afficher_file(PTfile*mafile)
+File* afficher_file(PTfile*mafile)
 {
     PTfile *temp=creerfile() ;
     if(!mafile)
@@ -162,6 +162,7 @@ void afficher_file(PTfile*mafile)
         enfiler(mafile,temp->debut->entier);
         defiler(temp);
     }
+    return (PTFile*)(mafile);
 
 }
 
